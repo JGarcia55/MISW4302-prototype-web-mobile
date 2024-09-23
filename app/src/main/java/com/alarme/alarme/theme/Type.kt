@@ -1,4 +1,4 @@
-package com.alarme.contactregister.ui.theme
+package com.alarme.alarme.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

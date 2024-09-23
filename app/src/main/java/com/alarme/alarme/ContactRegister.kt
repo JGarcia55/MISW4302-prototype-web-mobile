@@ -1,4 +1,4 @@
-package com.alarme.contactregister
+package com.alarme.alarme
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -6,13 +6,13 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.alarme.contactregister.ui.theme.ContactRegisterTheme
+import com.alarme.alarme.theme.ContactRegisterTheme
+import com.alarme.alarme.view.cellphone_register.CellphoneRegister
 
-class MainActivity : ComponentActivity() {
+class ContactRegisterActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -22,25 +22,17 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    CellphoneRegister()
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     ContactRegisterTheme {
-        Greeting("Android")
+        CellphoneRegister()
     }
 }
