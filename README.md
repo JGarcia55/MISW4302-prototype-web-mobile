@@ -58,8 +58,55 @@ La aplicación está dividida en varias páginas HTML conectadas entre sí media
 
 ## Aplicación Mobile
 
-*(Este apartado está en desarrollo y será completado más adelante.)*
+El directorio `mobile` contiene los archivos necesarios para ejecutar la aplicación en un entorno de android studio. Dentro del directorio encontrarás las siguientes carpetas y archivos principales:
 
+```
+/mobile
+│
+├── /app
+│   ├── /src  
+│       ├── main
+|            ├── java
+|                ├── com.alarme.alarme
+|                    ├── theme # Define la parte de UI, como colores, tipos, y temas
+|                    ├── view
+|                        ├── cellphone_register
+|                            ├── CellphoneRegister.kt # Toda la UI de la pantalla de registro
+|                            ├── CellphoneRegisterActivity # Lógica para poder manejar los estados de la pantalla
+|                        ├── contact_list
+|                            ├── ContactListRegister.kt # Toda la UI de la pantalla de lista de contactos de respaldo
+|                            ├── ContactListRegisterActivity # Lógica para poder manejar los estados de la pantalla
+|                        ├── contactregister
+|                            ├── ContactRegister.kt # Toda la UI de la pantalla de registro de contactos de respaldo
+|                            ├── ContactRegisterActivity # Lógica para poder manejar los estados de la pantalla
+|                        ├── core
+|                            ├── BottomBar.kt # UI del Bottom bar que es cross a la app
+|                            ├── SecondaryTopBar # UI de la top bar del registro de usuario y login
+|                            ├── TopBar.kt # Toda la UI del TopBar principal
+|                        ├── home
+|                            ├── Alarm.kt # Data de alarma
+|                            ├── AlarmHome # UI de lista de alarmas
+|                            ├── AlarmHomeActivity # Lógica para poder manejar los estados de la pantalla
+|                        ├── maincontactregister
+|                            ├── MainContactRegister  # UI de la pantalla para importar usuarios
+|                            ├── MainContactRegisterActivity # Lógica para poder manejar los estados de la pantalla
+|                        ├── otp_code_register
+|                            ├── OtpCodeRegister  # UI de la pantalla para validar código de teléfono
+|                            ├── OtpCodeRegisterActivity # Lógica para poder manejar los estados de la pantalla
+|                        ├── user_register
+|                            ├── OtpCodeRegister  # UI de la pantalla para registrar usuario
+|                            ├── OtpCodeRegisterActivity # Lógica para poder manejar los estados de la pantalla
+|                        ├── util # Funciones de utilidad
+|            ├── res # recursos como imagenes, textos, y dimensiones
+|            ├── AndroidManifest.xml # tiene definidas todas las pantallas
+|            ├── ic_launcher-playstore.png # ícono de AlarMe para el shortcut de app
+|            ├── ...
+│
+```
+### Requisitos para Probar la Aplicación
+1. Descargar el apk:
+En la base del directorio del proyecto encontrarás un archivo app-debug.apk, debes descargarlo e instalarlo en tu celular/emulador (https://www.youtube.com/watch?v=ePQ79Ij0-Xc), y ahí ya lo puedes ejecutar como cualquier aplicación
+2. En caso de no funcionar, activar opciones de desarrollador (se debe buscar en Google porque en cada celular es diferente)
 ---
 
 Con estos pasos podrás comenzar a probar la versión web de AlarMe sin problemas. ¡Explora las funcionalidades y organiza tu día a día de manera efectiva!
