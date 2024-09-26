@@ -58,7 +58,52 @@ La aplicación está dividida en varias páginas HTML conectadas entre sí media
 
 ## Aplicación Mobile
 
-*(Este apartado está en desarrollo y será completado más adelante.)*
+El directorio `mobile` contiene los archivos necesarios para ejecutar la aplicación en un entorno de android studio. Dentro del directorio encontrarás las siguientes carpetas y archivos principales:
+
+```
+/mobile
+│
+├── /app
+│   ├── /src  
+│       ├── main
+|            ├── java
+|                ├── com.alarme.alarme
+|                    ├── theme # Define la parte de UI, como colores, tipos, y temas
+|                    ├── view
+|                        ├── cellphone_register
+|                            ├── CellphoneRegister.kt # Toda la UI de la pantalla de registro
+|                            ├── CellphoneRegisterActivity # Lógica para poder manejar los estados de la pantalla
+|                        ├── contact_list
+|                            ├── ContactListRegister.kt # Toda la UI de la pantalla de lista de contactos de respaldo
+|                            ├── ContactListRegisterActivity # Lógica para poder manejar los estados de la pantalla
+|                        ├── contactregister
+|                            ├── ContactRegister.kt # Toda la UI de la pantalla de registro de contactos de respaldo
+|                            ├── ContactRegisterActivity # Lógica para poder manejar los estados de la pantalla
+|                        ├── core
+|                            ├── BottomBar.kt # UI del Bottom bar que es cross a la app
+|                            ├── SecondaryTopBar # UI de la top bar del registro de usuario y login
+|                            ├── TopBar.kt # Toda la UI del TopBar principal
+|                        ├── home
+|                            ├── Alarm.kt # Data de alarma
+|                            ├── AlarmHome # UI de lista de alarmas
+|                            ├── AlarmHome # Lógica para poder manejar los estados de la pantalla
+|                        ├── maincontactregister
+|                        ├── otp_code_register
+|                        ├── user_register
+|                        ├── util
+|            ├── res
+|            ├── AndroidManifest.xml # tiene definidas todas las pantallas
+|            ├── ic_launcher-playstore.png # ícono de AlarMe para el shortcut de app
+|            ├── ...
+│   ├── /js   # Archivos JS
+│       ├── main.js   # Archivo principal js
+│
+├── index.html       # Login de la aplicación
+├── home.html      # Página de inicio de la aplicación usando calendario
+├── alarmas.html    # listado de alarmas + creación de alarmas
+├── crear-alarma.html    # Formulario para la creación de alarmas
+└── alarmas2.html       # Representación de agregar alarma en el listado
+```
 
 ---
 
