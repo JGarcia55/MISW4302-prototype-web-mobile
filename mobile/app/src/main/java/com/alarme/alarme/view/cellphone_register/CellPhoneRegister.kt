@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -21,13 +20,10 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MenuAnchorType
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TextFieldDefaults.colors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -41,7 +37,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -68,8 +63,7 @@ fun CellphoneRegister() {
         Card(
             modifier = Modifier
                 .padding(paddingValues)
-                .padding(16.dp)
-                .fillMaxHeight(0.7f),
+                .padding(16.dp),
             colors = CardDefaults.cardColors(
                 contentColor = Color.Black,
                 containerColor = Secondary_100
@@ -85,7 +79,7 @@ fun CellphoneRegister() {
 fun GetDescriptionText() {
     val context = LocalContext.current
     val activity = context as? CellphoneRegisterActivity
-    Column(modifier = Modifier.fillMaxHeight(0.65F),
+    Column(
         horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
             modifier = Modifier
@@ -102,7 +96,10 @@ fun GetDescriptionText() {
 
         
 
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally) {
             Button(modifier = Modifier
                 .align(Alignment.CenterHorizontally)
                 .padding(
@@ -142,13 +139,12 @@ fun GetDescriptionText() {
             )
         )
 
+        Spacer(modifier = Modifier.size(22.dp))
     }
 }
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PhoneNumberInput() {
-    var phoneNumber by remember { mutableStateOf("") }
-    var expanded by remember { mutableStateOf(false) }
     var text by remember { mutableStateOf("3102561578") }
 
     Row(modifier = Modifier

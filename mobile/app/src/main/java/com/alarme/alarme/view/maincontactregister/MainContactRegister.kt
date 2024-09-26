@@ -114,8 +114,7 @@ fun GetDescriptionText() {
                     disabledContentColor = Color.Unspecified
                 ),
                 onClick = {
-                    context.startActivity(activity?.newIntent<CellphoneRegisterActivity>())
-                }) {
+                    }) {
                 Text(text = LocalContext.current.getString(R.string.import_contacts_text),
                     style = TextStyle(
                         textAlign = TextAlign.Center,
@@ -133,7 +132,9 @@ fun GetDescriptionText() {
                     disabledContainerColor = Color.Unspecified,
                     disabledContentColor = Color.Unspecified
                 ),
-                onClick = { /*TODO*/ }) {
+                onClick = {
+                    context.startActivity(activity?.newIntent<CellphoneRegisterActivity>())
+                }) {
                 Text(text = LocalContext.current.getString(R.string.add_contact_text),
                     style = TextStyle(
                         textAlign = TextAlign.Center,
