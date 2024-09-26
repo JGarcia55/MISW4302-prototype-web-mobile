@@ -86,25 +86,27 @@ El directorio `mobile` contiene los archivos necesarios para ejecutar la aplicac
 |                        ├── home
 |                            ├── Alarm.kt # Data de alarma
 |                            ├── AlarmHome # UI de lista de alarmas
-|                            ├── AlarmHome # Lógica para poder manejar los estados de la pantalla
+|                            ├── AlarmHomeActivity # Lógica para poder manejar los estados de la pantalla
 |                        ├── maincontactregister
+|                            ├── MainContactRegister  # UI de la pantalla para importar usuarios
+|                            ├── MainContactRegisterActivity # Lógica para poder manejar los estados de la pantalla
 |                        ├── otp_code_register
+|                            ├── OtpCodeRegister  # UI de la pantalla para validar código de teléfono
+|                            ├── OtpCodeRegisterActivity # Lógica para poder manejar los estados de la pantalla
 |                        ├── user_register
-|                        ├── util
-|            ├── res
+|                            ├── OtpCodeRegister  # UI de la pantalla para registrar usuario
+|                            ├── OtpCodeRegisterActivity # Lógica para poder manejar los estados de la pantalla
+|                        ├── util # Funciones de utilidad
+|            ├── res # recursos como imagenes, textos, y dimensiones
 |            ├── AndroidManifest.xml # tiene definidas todas las pantallas
 |            ├── ic_launcher-playstore.png # ícono de AlarMe para el shortcut de app
 |            ├── ...
-│   ├── /js   # Archivos JS
-│       ├── main.js   # Archivo principal js
 │
-├── index.html       # Login de la aplicación
-├── home.html      # Página de inicio de la aplicación usando calendario
-├── alarmas.html    # listado de alarmas + creación de alarmas
-├── crear-alarma.html    # Formulario para la creación de alarmas
-└── alarmas2.html       # Representación de agregar alarma en el listado
 ```
-
+### Requisitos para Probar la Aplicación
+1. Descargar el apk:
+En la base del directorio del proyecto encontrarás un archivo app-debug.apk, debes descargarlo e instalarlo en tu celular/emulador (https://www.youtube.com/watch?v=ePQ79Ij0-Xc), y ahí ya lo puedes ejecutar como cualquier aplicación
+2. En caso de no funcionar, activar opciones de desarrollador (se debe buscar en Google porque en cada celular es diferente)
 ---
 
 Con estos pasos podrás comenzar a probar la versión web de AlarMe sin problemas. ¡Explora las funcionalidades y organiza tu día a día de manera efectiva!
