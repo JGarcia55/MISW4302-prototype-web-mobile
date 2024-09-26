@@ -108,6 +108,11 @@ El directorio `mobile` contiene los archivos necesarios para ejecutar la aplicac
 En la base del directorio del proyecto encontrarás un archivo app-debug.apk, debes descargarlo e instalarlo en tu celular/emulador (https://www.youtube.com/watch?v=ePQ79Ij0-Xc), y ahí ya lo puedes ejecutar como cualquier aplicación
 2. En caso de no funcionar, activar opciones de desarrollador (se debe buscar en Google porque en cada celular es diferente)
 ---
+### Requisitos para Probar la Aplicación en Android
+1. Abrir el proyecto en la carpeta mobile en AS
+2. Dar en sincronizar gradle
+3. Crear emulador
+4. Ejecutar (botón de play)
 
 Con estos pasos podrás comenzar a probar la versión web de AlarMe sin problemas. ¡Explora las funcionalidades y organiza tu día a día de manera efectiva!
 
