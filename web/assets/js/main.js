@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded',function () {
-    if (window.location.pathname === '/alarmas.html' || window.location.pathname === '/crear-alarma.html') {
+    if (window.location.pathname === '/alarmas.html' || window.location.pathname === '/alarmas2.html' || window.location.pathname === '/crear-alarma.html') {
         var navbarHeight = document.getElementById('navbar').offsetHeight;
         var windowHeight = window.innerHeight;
         var contentHeight = windowHeight - navbarHeight;

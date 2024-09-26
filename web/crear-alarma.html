@@ -18,7 +18,7 @@
     <section class="bg-primary-700" id="navbar">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand text-white fs-3 fw-bold" href="#">AlarMe</a>
+                <a class="navbar-brand text-white fs-3 fw-bold" href="home.html">AlarMe</a>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
@@ -37,11 +37,14 @@
             <div class="col-3 bg-secondary-100 flex-column">
                 <div class="card my-3 bg-primary-100">
                     <div class="card-body">
-                        <h5 class="card-title text-center fs-4 fw-bold">AlarMe</h5>
+                        <h5 class="card-title text-center fs-4 fw-bold">Llamar amigo</h5>
                         <p class="card-title text-center fs-5 lh-1">
                             06:00 AM<br>
                             <span class="fs-6">Todos los días</span>
                         </p>
+                        <div class="text-center">
+                            <button class="btn bg-secondary-200" data-bs-toggle="modal" data-bs-target="#alarma1">Probar notificación</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -53,7 +56,25 @@
                     <div class="card-body">
                         <h1 class="card-title text-center primary-color fs-2 fw-bold">NUEVA ALARMA</h1>
                         <div class="d-flex justify-content-center">
-                            <form class="w-75">
+                            <form class="w-75" action="alarmas2.html">
+                                <div class="row">
+                                    <div class="mb-3 col-6">
+                                        <label for="hora" class="form-label">Título</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3 col-6">
+                                        <label class="form-check-label" for="repetir_select">Repetir</label>
+                                        <select id="repetir_select" multiple="multiple" class="w-100 mt-2">
+                                            <option value="1" selected="selected">Lunes</option>
+                                            <option value="2" selected="selected">Martes</option>
+                                            <option value="3" selected="selected">Miercoles</option>
+                                            <option value="4" selected="selected">Jueves</option>
+                                            <option value="5" selected="selected">Viernes</option>
+                                            <option value="6" selected="selected">Sabado</option>
+                                            <option value="7" selected="selected">Domingo</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="mb-3 col-6">
                                         <label for="hora" class="form-label">Hora</label>
@@ -64,18 +85,27 @@
                                         <input type="date" class="form-control" id="fecha">
                                     </div>
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-check-label" for="repetir_select">Repetir</label>
-                                    <select id="repetir_select" multiple="multiple" class="w-100 mt-2">
-                                        <option value="1" selected="selected">Lunes</option>
-                                        <option value="2" selected="selected">Martes</option>
-                                        <option value="3" selected="selected">Miercoles</option>
-                                        <option value="4" selected="selected">Jueves</option>
-                                        <option value="5" selected="selected">Viernes</option>
-                                        <option value="6" selected="selected">Sabado</option>
-                                        <option value="7" selected="selected">Domingo</option>
-                                    </select>
+                                <div class="row">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
                                 </div>
+                                <div class="row">
+                                    <div class="mb-3 col-6 form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onclick="toggleContacts()">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            ¿Compartir alarma?
+                                        </label>
+                                    </div>
+                                    <div class="mb-3 col-6" id="contactos" style="display:none">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" id="input-contactos" readonly required>
+                                            <button class="input-group-text" type="button" data-bs-toggle="modal" data-bs-target="#contacto">Agregar Contacto</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                 <div class="d-flex justify-content-center align-items-center flex-column gap-2 mt-5">
                                     <button type="submit" class="btn bg-primary-700 w-50">Guardar alarma</button>
                                     <a href="alarmas.html" class="btn bg-secondary-300 w-50">Cancelar</a>
@@ -87,6 +117,103 @@
             </div>
         </div>
     </section>
+    <div class="modal fade" id="alarma1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-center w-100" id="exampleModalLabel">
+                        <span><i class="bi bi-bell"></i></span><br>
+                        <span>Llamar amigo</span>
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center fs-6">Cumple años, no olvidar hablar con el</p>
+                    <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+                        <button type="button" class="btn bg-primary-700 w-75" data-bs-dismiss="modal">Apagar</button>
+                        <button type="button" class="btn btn-secondary w-75" data-bs-dismiss="modal">Posponer</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="contacto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="" id="contactsForm">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 text-center w-100" id="exampleModalLabel">
+                            <span>Compartir con contactos</span>
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center fs-6">Selecciona las personas con las que quieres compartir tu alarma</p>
+                        <table class="table">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Contacto</th>
+                                    <th>Seleccionar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Juan Diego</td>
+                                    <td>
+                                        <input class="form-check-input contact-checkbox" type="checkbox" value="Juan Diego">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Brayan Ricardo</td>
+                                    <td>
+                                        <input class="form-check-input contact-checkbox" type="checkbox" value="Brayan Ricardo">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Jorge david</td>
+                                    <td>
+                                        <input class="form-check-input contact-checkbox" type="checkbox" value="Jorge David">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn bg-primary-700" data-bs-dismiss="modal">Aceptar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('contactsForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                let selectedContacts = [];
+                
+                document.querySelectorAll('.contact-checkbox').forEach(function(checkbox) {
+                    if (checkbox.checked) {
+                        selectedContacts.push(checkbox.value);
+                    }
+                });
+
+                localStorage.setItem('selectedContacts', JSON.stringify(selectedContacts));
+                document.getElementById('input-contactos').value = selectedContacts.join(', ');
+
+                /* let modal = bootstrap.Modal.getInstance(document.getElementById('contactsModal'));
+                modal.hide(); */
+            });
+        })
+
+        function toggleContacts(){
+            console.log("Hello world")
+            $('#contactos').toggle()
+        }
+    </script>
     <script src="./assets/js/main.js"></script>
 </body>
 </html>

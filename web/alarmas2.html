@@ -44,6 +44,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="card my-3 bg-primary-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-center fs-4 fw-bold">Nueva alarma</h5>
+                        <p class="card-title text-center fs-5 lh-1">
+                            08:00 AM<br>
+                            <span class="fs-6">Jueves y viernes</span>
+                        </p>
+                        <div class="text-center">
+                            <button class="btn bg-secondary-200" data-bs-toggle="modal" data-bs-target="#alarma2">Probar notificación</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-9">
                 <a href="./home.html" class="btn">
@@ -73,6 +85,29 @@
                 </div>
                 <div class="modal-body">
                     <p class="text-center fs-6">Cumple años, no olvidar hablar con el</p>
+                    <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+                        <button type="button" class="btn bg-primary-700 w-75" data-bs-dismiss="modal">Apagar</button>
+                        <button type="button" class="btn btn-secondary w-75" data-bs-dismiss="modal">Posponer</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="alarma2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-center w-100" id="exampleModalLabel">
+                        <span><i class="bi bi-bell"></i></span><br>
+                        <span>Nueva alarma</span>
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center fs-6">Esta alarma es para probar la alarma</p>
                     <div class="d-flex flex-column justify-content-center align-items-center gap-2">
                         <button type="button" class="btn bg-primary-700 w-75" data-bs-dismiss="modal">Apagar</button>
                         <button type="button" class="btn btn-secondary w-75" data-bs-dismiss="modal">Posponer</button>
